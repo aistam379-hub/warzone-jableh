@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "IBM Plex Sans Arabic", "Segoe UI", sans-serif;
+  --font-display: "Cairo", "IBM Plex Sans Arabic", sans-serif;
+
+  /* Real brand palette, sampled from the client's own logo. */
+  --color-ink: #0a0a0a;
+  --color-ink-2: #141414;
+  --color-paper: #f2f1e9;
+  --color-bone: #d9d6c9;
+  --color-yellow: #f2c230;
+  --color-blue: #2d6cdf;
+}
+
+/* Safe full-viewport-height helper — see athar-cafe/aeronaut for why this
+   must be a plain CSS class, not a React inline style (no fallback there). */
+.h-viewport-safe {
+  height: 100vh;
+}
+@supports (height: 100dvh) {
+  .h-viewport-safe {
+    height: 100dvh;
+  }
+}
+
+/* "3D-extruded stencil" headline treatment, adapted from a hand-drawn
+   reference lettering piece: heavy Cairo weight + stacked ink offsets to
+   fake a beveled/extruded side, plus a colored outline glow on top. Applied
+   selectively, not globally — this is a hero-moment effect, not body type.
+   The forward skew + tightened tracking is a second reference: a bold
+   slanted "movie-poster" Arabic title treatment with motion-streak energy. */
+.stencil-extrude {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  transform: skewX(-9deg);
+  -webkit-text-stroke: 2px var(--color-ink);
+  paint-order: stroke fill;
+  text-shadow:
+    1px 1px 0 var(--color-ink),
+    2px 2px 0 var(--color-ink),
+    3px 3px 0 var(--color-ink),
+    4px 4px 0 var(--color-ink),
+    5px 5px 0 var(--color-ink),
+    6px 6px 14px rgba(0, 0, 0, 0.55),
+    0 0 22px color-mix(in srgb, var(--color-yellow) 55%, transparent);
+}
+
+/* Diagonal "motion streak" accent flanking a slanted headline — matches the
+   .stencil-extrude skew angle so it reads as speed, not a stray decoration. */
+.speed-line {
+  display: block;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, var(--color-yellow), transparent);
+  transform: skewY(-9deg);
+}
+
+/* Phone numbers stay LTR even inside RTL flow — see rtl-arabic-ui skill. */
+.ltr-isolate {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+/* Beveled "tactical tag" button shape — deliberately not a soft rounded
+   pill, so CTAs read as game-HUD chrome rather than generic SaaS buttons. */
+.btn-tactical {
+  clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--color-ink);
+  color: var(--color-paper);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+section[id] {
+  scroll-margin-top: 88px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+::selection {
+  background: var(--color-yellow);
+  color: var(--color-ink);
+}

@@ -1,7 +1,10 @@
 import { motion } from "motion/react";
 import { asset } from "../lib/asset";
 
-const LOCATION_QUERY = "War Zone Paintball جبلة المتحلق الجديد مقابل كافيه Lona Rosa";
+// Plain geographic hierarchy only (road, city, country) — mixing in the
+// business/cafe names here previously made Google's search match an
+// unrelated place with a similar name instead of geocoding the area.
+const LOCATION_QUERY = "المتحلق الجديد، جبلة، سوريا";
 
 function Block({
   eyebrow,

@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import { asset } from "../lib/asset";
 
 const CHECKLIST = [
   "معدات حماية كاملة معتمدة: قناع، قفازات، بدلة واقية",
@@ -8,10 +9,10 @@ const CHECKLIST = [
 ];
 
 const MOSAIC = [
-  { src: "/gallery/gallery-01-mask-on.webp", alt: "لاعب War Zone يجهّز قناعه قبل الجولة" },
-  { src: "/gallery/gallery-02-gear-closeup.webp", alt: "قناع وقفازات الحماية عن قرب" },
-  { src: "/gallery/gallery-04-marker.webp", alt: "لاعب يجهّز سلاح البينتبول قرب البراميل" },
-  { src: "/gallery/gallery-03-arena-wide.webp", alt: "ميدان War Zone الحقيقي بجبلة" },
+  { src: asset("/gallery/gallery-01-mask-on.webp"), alt: "لاعب War Zone يجهّز قناعه قبل الجولة" },
+  { src: asset("/gallery/gallery-02-gear-closeup.webp"), alt: "قناع وقفازات الحماية عن قرب" },
+  { src: asset("/gallery/gallery-04-marker.webp"), alt: "لاعب يجهّز سلاح البينتبول قرب البراميل" },
+  { src: asset("/gallery/gallery-03-arena-wide.webp"), alt: "ميدان War Zone الحقيقي بجبلة" },
 ];
 
 export function Story() {

@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import { asset } from "../lib/asset";
 
 const LOCATION_QUERY = "War Zone Paintball جبلة المتحلق الجديد مقابل كافيه Lona Rosa";
 
@@ -82,7 +83,7 @@ export function Highlights() {
           highlight="بجبلة"
           paragraph="ساحة حقيقية بعوائق وبراميل ومخابئ رملية، بجبلة عالمتحلق الجديد مقابل كافيه Lona Rosa — جاهزة للمعركة من أول دقيقة."
           bullets={["عوائق وبراميل ومخابئ رملية حقيقية", "مساحة مفتوحة تتحمل مجموعات كبيرة", "قريب من وسط جبلة وسهل الوصول"]}
-          photo="/gallery/gallery-03-arena-wide.webp"
+          photo={asset("/gallery/gallery-03-arena-wide.webp")}
           photoAlt="ميدان War Zone الحقيقي بجبلة، عوائق وبراميل وسماء مفتوحة"
           cta={{ label: "افتح الموقع بخرائط غوغل", href: `https://www.google.com/maps/search/${encodeURIComponent(LOCATION_QUERY)}` }}
         />
@@ -95,7 +96,7 @@ export function Highlights() {
           highlight="احترافية بكل جولة"
           paragraph="قناع كامل الوجه، قفازات وبدلة واقية لكل لاعب، مع إشراف مباشر أثناء اللعب — السلامة أول شي قبل ما تبلش الحرب."
           bullets={["قناع كامل الوجه معتمد لكل لاعب", "قفازات وبدلة واقية مقاومة للصدمات", "إشراف وتوجيه مباشر طول الجولة"]}
-          photo="/gallery/gallery-02-gear-closeup.webp"
+          photo={asset("/gallery/gallery-02-gear-closeup.webp")}
           photoAlt="قناع وقفازات الحماية عن قرب"
           reverse
         />

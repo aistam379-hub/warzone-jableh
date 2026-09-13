@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import { asset } from "../lib/asset";
 
 const PRIMARY_PHONE = "0993222986";
 const IG_HANDLE = "war_zone_paintball_jableh";
@@ -13,9 +14,9 @@ const fadeUp = {
 // DOM order right → left in RTL: booking, gear, arena — so "arena" lands
 // visually first (rightmost reading start) and "booking" last (leftmost).
 const FEATURES = [
-  { anchor: "#feature-booking", photo: "/gallery/gallery-04-marker.webp", title: "الحجز", desc: "احجز تجربتك الآن" },
-  { anchor: "#feature-gear", photo: "/gallery/gallery-02-gear-closeup.webp", title: "المعدات", desc: "معدات حماية كاملة" },
-  { anchor: "#feature-arena", photo: "/gallery/gallery-03-arena-wide.webp", title: "الملعب", desc: "ميدان متكامل ومجهّز" },
+  { anchor: "#feature-booking", photo: asset("/gallery/gallery-04-marker.webp"), title: "الحجز", desc: "احجز تجربتك الآن" },
+  { anchor: "#feature-gear", photo: asset("/gallery/gallery-02-gear-closeup.webp"), title: "المعدات", desc: "معدات حماية كاملة" },
+  { anchor: "#feature-arena", photo: asset("/gallery/gallery-03-arena-wide.webp"), title: "الملعب", desc: "ميدان متكامل ومجهّز" },
 ];
 
 export function Hero() {
@@ -31,7 +32,7 @@ export function Hero() {
           playsInline
           className="size-full scale-110 object-cover blur-[3px]"
         >
-          <source src="/video/hero-mobile.mp4" type="video/mp4" />
+          <source src={asset("/video/hero-mobile.mp4")} type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-b from-ink/80 via-ink/55 to-ink" />
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-ink/40" />
@@ -48,7 +49,7 @@ export function Hero() {
           <motion.img
             variants={fadeUp}
             transition={{ duration: 0.8 }}
-            src="/logo.png"
+            src={asset("/logo.png")}
             alt="Warzone Paintball Legends — حلبة وُور زون للبينتبول"
             className="w-32 drop-shadow-[0_10px_24px_rgba(0,0,0,0.6)] sm:w-40 md:w-40 lg:w-44"
           />

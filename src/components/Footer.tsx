@@ -1,4 +1,5 @@
 import { InstagramIcon } from "./InstagramIcon";
+import { asset } from "../lib/asset";
 
 const PHONES = ["0993222986", "0985183745"];
 const IG_HANDLE = "war_zone_paintball_jableh";
@@ -9,7 +10,7 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-14 sm:px-8">
         <div className="flex flex-col items-center gap-8 text-center md:flex-row md:items-start md:justify-between md:text-right">
           <div className="flex flex-col items-center gap-3 md:items-end">
-            <img src="/logo.png" alt="Warzone Paintball Legends" className="h-14 w-auto" />
+            <img src={asset("/logo.png")} alt="Warzone Paintball Legends" className="h-14 w-auto" />
             <p className="max-w-xs text-sm font-bold text-paper/60">
               أول ملعب بينتبول احترافي في جبلة — جهّز فريقك وعيش الحماس.
             </p>
